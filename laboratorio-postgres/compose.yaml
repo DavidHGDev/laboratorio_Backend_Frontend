@@ -1,0 +1,16 @@
+services:
+  #nombre del servicio en la red
+  tareas:
+    image: postgres:17
+    container_name: tareas_pruebas
+    restart: always
+    environment:
+      - POSTGRES_USER=david
+      - POSTGRES_PASSWORD=admin456
+      - POSTGRES_DB=tareas_db
+    ports:
+      - "5435:5432"
+    volumes: 
+      - datos_persistentes:/var/lib/postgresql/data
+volumes:
+  datos_persistentes:
