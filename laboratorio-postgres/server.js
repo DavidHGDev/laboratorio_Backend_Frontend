@@ -13,6 +13,7 @@ app.use(e.json({ limit: '2mb' }));
 app.use(e.static(rutaAbsoluta)); //Servimos nuestro frontend
 
 
+
 app.listen(env.PORT, () => {
     console.log(`Server Running in http://localhost:${env.PORT}`)
 })
