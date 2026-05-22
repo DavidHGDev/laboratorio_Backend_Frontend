@@ -1,0 +1,15 @@
+services: 
+  postgres-quantix:
+    image: postgres:17 #utilizar la ultima version desponible
+    container_name: quantix_db_container # nombre del contenedor
+    restart: always # intenta levantar el contenedor automaticamente
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin456
+      POSTGRES_DB: qunatix_db # nombre de la base de datos
+    ports: 
+      - "5433:5432" # expone el puerto de la base de datos
+    volumes: 
+      - quantix_pg_data:/var/lib/postgresql/data # guarda los datos para no perderlos, si borró el contenedor
+volumes:
+  quantix_pg_data:
