@@ -219,3 +219,4 @@ $RECYCLE.BIN/
 
 /app/generated/prisma
 generated
+/app/config/env.db
