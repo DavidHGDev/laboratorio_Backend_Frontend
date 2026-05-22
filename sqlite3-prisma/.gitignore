@@ -1,4 +1,3 @@
-generated
 # Created by https://www.toptal.com/developers/gitignore/api/node,linux,windows,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,linux,windows,macos
 
@@ -217,3 +216,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/node,linux,windows,macos
+
+/app/generated/prisma
+generated
