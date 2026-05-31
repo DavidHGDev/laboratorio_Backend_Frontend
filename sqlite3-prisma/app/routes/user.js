@@ -5,12 +5,13 @@ import bcrypt from "bcryptjs";
 
 export const getUser = async (req, res, next) => {
      
-    const datos = {name: 'David', phone: '3103667414', password: 'admin456'}
+    const datos = {name: 'David', phone: '3103667414', password: 'admin456', email: 'admin@quantix.com'}
     const hashPassword = await bcrypt.hash(datos.password, 10)
     const newUser = await prisma.user.create({
         data: {
             name: datos.name,
             phone: datos.phone,
+            email: datos.email,
             password: hashPassword
         }
     });
