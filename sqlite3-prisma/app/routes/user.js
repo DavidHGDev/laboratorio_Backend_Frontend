@@ -1,9 +1,18 @@
 import { prisma } from "../config/prisma.js";
+import jwt from 'jsonwebtoken';
+import bcrypt from "bcryptjs";
+
 
 export const getUser = async (req, res, next) => {
-    const datos = {name: 'David', phone: '3103667414'}
+     
+    const datos = {name: 'David', phone: '3103667414', password: 'admin456'}
+    const hashPassword = await bcrypt.hash(datos.password, 10)
     const newUser = await prisma.user.create({
-        data: datos
+        data: {
+            name: datos.name,
+            phone: datos.phone,
+            password: hashPassword
+        }
     });
 
     const data = await prisma.user.findMany();
@@ -11,7 +20,7 @@ export const getUser = async (req, res, next) => {
 }
 
 export const createUser = async (req, res, next) => {
-    const data = {name: 'David', phone: '3103667414'}
+    const data = {name: 'David', phone: '3103667414', password: 'admin456'}
     const newUser = await prisma.user.create(data);
     res.json(newUser);
 }
