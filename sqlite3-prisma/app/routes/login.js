@@ -15,9 +15,7 @@ export const loginAuth = async (req, res, next) => {
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if(!isMatch) {
-        res.status(401).json({ message: 'usuario o contraseña inválido' })
-    }
+    if(!isMatch) return res.status(401).json({ message: 'usuario o contraseña inválido' })
 
     //genera token, y se guardan los datos útiles
     const token = jwt.sign(
@@ -34,4 +32,6 @@ export const loginAuth = async (req, res, next) => {
         token,
         user: newData
     })
+
+    next();
 }
