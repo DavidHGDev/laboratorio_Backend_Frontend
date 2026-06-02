@@ -16,6 +16,7 @@ const app = e();
 app.use(logger) // para capturar ruta debe ser al inicio
 
 app.use(e.json({ limit: '2mb' }));
+app.use(e.urlencoded({ extended: true }))
 app.use(e.static(rutaAbsoluta));
 //app.use(cors());
 app.use('/api', routerApp);

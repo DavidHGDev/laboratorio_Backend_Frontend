@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken';
 import { prisma } from "../config/prisma.js";
+import { env } from "../config/env.js";
 
 export const loginAuth = async (req, res, next) => {
     const { email, password } = req.body;
