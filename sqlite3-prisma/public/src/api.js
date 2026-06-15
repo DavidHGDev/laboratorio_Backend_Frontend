@@ -16,7 +16,7 @@ export async function peticion(endpoind, method = 'GET', data = null) {
 
     const response = await fetch(`${BASE_URL}${endpoind}`, config);
 
-    if(response === 401){
+    if(response.status === 401){
         console.error('Token invalido o expirado');
         localStorage.removeItem('token');
         window.location.href = '/form.html';
