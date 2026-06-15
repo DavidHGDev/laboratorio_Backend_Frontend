@@ -1,10 +1,11 @@
 import { peticion } from "./api.js";
 
 const button = document.querySelector('button');
-console.log(button)
+
 
 button.addEventListener('click', (e) => {
     e.preventDefault();
+    console.log(button)
     getUser()
 })
 

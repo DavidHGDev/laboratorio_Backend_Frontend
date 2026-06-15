@@ -1,4 +1,4 @@
-BASE_URL = 'http://localhost:3000/api'
+const BASE_URL = 'http://localhost:3000/api';
 
 export async function peticion(endpoind, method = 'GET', data = null) {
     const token = localStorage.getItem('token');

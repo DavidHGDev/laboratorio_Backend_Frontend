@@ -10,8 +10,11 @@ form.addEventListener('submit', (e) => {
 
 //Enviar al Backend
 async function dataServer(data) {
-    const response = await peticion('/user', 'POST', data)
-
-    const resultado = await response.json();
-    console.log(resultado)
+    const response = await peticion('/auth', 'POST', data)
+    
+    if(response.token) {
+        localStorage.setItem('token', response.token)
+        console.log('Login exitoso')
+    }
+    console.log(response)
 }
