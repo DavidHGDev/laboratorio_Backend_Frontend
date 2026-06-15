@@ -8,7 +8,6 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(form);
     console.log(formData)
-    console.log(formData.entries.usuario)
     const data = Object.fromEntries(formData.entries())
 
     console.log(data)
@@ -17,7 +16,7 @@ form.addEventListener('submit', (e) => {
 
 //Enviar al Backend
 async function dataServer(data) {
-    const response = await fetch('http://localhost:3000/api/login', {
+    const response = await fetch('http://localhost:3000/api/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
