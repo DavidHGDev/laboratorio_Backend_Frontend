@@ -1,0 +1,33 @@
+<form action="">
+    <p>Con la etiqueta fieldset solo con el atributo radio, solo se puede seleccionar uno a la vez</p>
+    <fieldset>
+        <legend>Redios</legend>
+        <input type="radio" id="femenino" name="genero" value="F">
+        <label for="femenino">Femenino</label>
+
+        <input type="radio" id="masculino" name="genero" value="F">
+        <label for="masculino">Masculino</label>
+    </fieldset>
+
+    <p> la misma etiqueta, pero sin poner el grupo de dos elementos, se puede utilizar check para agregar varios</p>
+    <fieldset>
+        <legend>Favoritos</legend>
+        <input type="checkbox" id="musica" name="musica" value="musica">
+        <label for="musica">Musica</label>
+
+        <input type="checkbox" id="leer" name="leer" value="leer">
+        <label for="leer">Leer</label>
+
+        <input type="date" id="hora" name="hora">
+        <label for="hora">Hora</label>
+    </fieldset>
+
+    <div>
+        <label for="pais">Pais</label>
+        <select name="pais" id="pais">
+            <option value="colombia">Colombia</option>
+            <option value="peru">Perú</option>
+        </select>
+    </div>
+
+</form>
